@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#251427">
+  <meta name="description" content="A little birthday world, made for someone special.">
+  <title>A Little Birthday World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    // Show the opening film only on the first visit in this browser tab.
+    try {
+      if (sessionStorage.getItem('birthday-intro-polished-seen') !== 'yes') document.documentElement.classList.add('intro-pending');
+    } catch (error) { document.documentElement.classList.add('intro-pending'); }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home/home.css">
+  <link rel="stylesheet" href="shared/experience.css">
+  <script src="home/home-content.js" defer></script>
+  <script src="home/home.js" defer></script>
+  <script src="home/vendor/jszip.min.js" defer></script>
+  <script src="home/photo-editor.js" defer></script>
+  <script src="shared/experience.js" defer></script>
+</head>
+<body class="page-home">
+  <section class="intro-screen" id="intro-screen" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+    <div class="intro-backdrop" aria-hidden="true"></div>
+    <video id="intro-video" class="intro-video" muted playsinline preload="auto" poster="home/assets/intro-poster.jpg" src="home/assets/intro.mp4" aria-label="A birthday cake video"></video>
+    <div class="intro-shade" aria-hidden="true"></div>
+    <div class="intro-slice-stage" id="intro-slice-stage" aria-hidden="true"><span class="intro-slice-line" id="intro-slice-line" hidden></span><svg class="slice-guide" viewBox="0 0 420 90" fill="none"><path d="M18 68C125 22 246 14 395 29"/><path d="M377 17L397 29L379 42"/></svg></div>
+    <div class="intro-slice-prompt" id="intro-slice-prompt" aria-live="polite">
+      <p data-home-text="introPrompt">Make a wish, then slice the cake.</p>
+      <span data-home-text="introHint">Swipe or drag across the cake.</span>
+      <button type="button" id="intro-cut-button" data-home-text="introCutButton">Or tap here to cut</button>
+    </div>
+    <div class="intro-topbar"><p id="intro-title" data-home-text="introTitle">A little birthday surprise</p><button type="button" class="intro-skip" id="intro-skip">Skip intro <span aria-hidden="true">→</span></button></div>
+    <button type="button" class="intro-play" id="intro-play" hidden>Play the birthday video</button>
+    <div class="intro-bottom"><button type="button" class="intro-sound" id="intro-sound" aria-pressed="false" data-home-text="soundOn">Turn sound on</button></div>
+  </section>
+  <div class="site-shell">
+    <header class="topbar wrap">
+      <a class="brand" href="index.html" aria-label="A Little Birthday World, home">
+        <span class="brand-symbol" aria-hidden="true">✶</span>
+        <span>A little<br><strong>birthday world</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="current" href="index.html" aria-current="page">Home</a>
+        <a href="wish/index.html">Wish</a>
+        <a href="story/index.html">Story</a>
+      </nav>
+      <a class="top-link" href="wish/index.html">A little something <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></a>
+    </header>
+
+    <main class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="sparkle">✦</span> <span data-home-text="heroLabel">A DAY THAT'S ALL ABOUT YOU</span></div>
+        <h1 tabindex="-1"><span data-home-text="titleLine1">For you,</span><br><em data-home-text="titleLine2">on your</em><br><span data-home-text="titleLine3">birthday</span><span class="period">.</span></h1>
+        <p><span data-home-text="messageLine1">Some people make the world a little brighter.</span><br class="desktop-break"> <span data-home-text="messageLine2">Today, we all of us celebrate one of them.</span></p>
+        <div class="hero-actions"><a class="primary-button" href="wish/index.html"><span data-home-text="wishButton">Open your wish</span> <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></a><a class="story-link" href="story/index.html"><span data-home-text="storyButton">Explore your story</span> <span aria-hidden="true">→</span></a></div>
+        <button class="replay-intro" id="replay-intro" type="button"><span class="replay-icon" aria-hidden="true">↻</span> <span data-home-text="replayButton">Replay the birthday surprise</span></button>
+      </div>
+
+      <div class="postcard-scene" aria-label="Choose a birthday page">
+        <svg class="sketch-arrow" viewBox="0 0 140 90" fill="none" aria-hidden="true"><path d="M7 12c23 0 34 3 48 19 12 14 29 16 66 9M109 28c4 4 10 9 13 12-2 4-6 10-7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a class="postcard wish-card" href="wish/index.html" aria-label="Open the wish page">
+          <span class="tape tape-one" aria-hidden="true"></span>
+          <span class="card-picture wish-picture"><span class="mini-scribble" data-home-text="wishCardCaption">for you</span></span>
+          <span class="postcard-bottom"><span><small>01 / A LITTLE NOTE</small><strong data-home-text="wishCardTitle">The Wish</strong></span><span class="card-arrow" aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
+        </a>
+        <a class="postcard story-card" href="story/index.html" aria-label="Open the story page">
+          <span class="tape tape-two" aria-hidden="true"></span>
+          <span class="card-picture story-picture"><span class="photo-caption" data-home-text="storyCardCaption">all your little moments</span></span>
+          <span class="postcard-bottom"><span><small>02 / OUR LITTLE WORLD</small><strong data-home-text="storyCardTitle">The Story</strong></span><span class="card-arrow" aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
+        </a>
+        <span class="handwritten scene-footer">two little things,<br>one big feeling</span>
+      </div>
+    </main>
+    <div class="postcard-tools wrap">
+      <button type="button" class="edit-postcards" id="edit-postcards" aria-haspopup="dialog">Change postcard photos <span aria-hidden="true">↗</span></button>
+    </div>
+    <footer class="site-footer wrap"><span>AN ENTIRE DAY FOR YOU</span><span class="footer-center" aria-hidden="true">✶ &nbsp; ✦ &nbsp; ✶</span><span>WISHES, MEMORIES &amp; LOVE</span></footer>
+  </div>
+<dialog class="photo-editor" id="postcard-photo-editor" aria-labelledby="photo-editor-title">
+  <div class="photo-editor-inner">
+    <div class="photo-editor-heading">
+      <div>
+        <p class="photo-editor-kicker">MAKE IT YOURS</p>
+        <h2 id="photo-editor-title">Add your photos</h2>
+        <p>Choose photos for the two postcards. They will preview on this page.</p>
+      </div>
+      <button type="button" class="photo-editor-close" id="close-photo-editor" aria-label="Close photo editor">×</button>
+    </div>
+    <div class="photo-editor-grid">
+      <div class="photo-choice">
+        <img id="wish-photo-preview" src="home/assets/wish-card.jpg" alt="Preview of the Wish postcard photo">
+        <label for="wish-photo-input">Wish postcard photo</label>
+        <input type="file" id="wish-photo-input" accept="image/*">
+      </div>
+      <div class="photo-choice">
+        <img id="story-photo-preview" src="home/assets/story-card.jpg" alt="Preview of the Story postcard photo">
+        <label for="story-photo-input">Story postcard photo</label>
+        <input type="file" id="story-photo-input" accept="image/*">
+      </div>
+    </div>
+    <div class="photo-export">
+      <h3>Make the photos visible to everyone</h3>
+      <p>Select the updated website ZIP you downloaded from ChatGPT, then download a new ZIP with your photos. Upload that new ZIP to Vercel.</p>
+      <label for="website-zip-input">Select your website ZIP</label>
+      <input type="file" id="website-zip-input" accept=".zip,application/zip,application/x-zip-compressed">
+      <button type="button" class="photo-export-button" id="download-photo-site">Download website with photos</button>
+      <p class="photo-editor-status" id="photo-editor-status" role="status" aria-live="polite">Your photos stay on this device until you upload the new ZIP.</p>
+    </div>
+  </div>
+</dialog>
+</body>
+</html>

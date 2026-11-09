@@ -1,0 +1,128 @@
+BIRTHDAY WEBSITE: START HERE
+============================
+
+1. EXTRACT THE ZIP
+-------------------
+Right-click the ZIP file and choose "Extract All". Open the extracted
+Birthday_Website folder. Double-click index.html to preview the website.
+You can also open the folder in VS Code using File > Open Folder.
+
+The opening shows the cake first. Swipe or drag across the cake to start
+its video. The Wish and Story pages open separately.
+
+2. EDIT THE TEXT
+----------------
+Open these three files in VS Code or another text editor:
+
+  home/home-content.js     Home page and cake intro text
+  wish/wish-content.js     Birthday letter and the three little notes
+  story/story-content.js   Story page, chapter headings, and chapter text
+
+Change only the words between the double quotation marks. Keep the quotation
+marks and commas. For example:
+
+  letterGreeting: "Happy birthday!",
+
+can become:
+
+  letterGreeting: "Happy birthday, [her name]!",
+
+Save with Ctrl+S and refresh the page in your browser. If your own text contains
+a double quotation mark, write it as \" so the JavaScript file remains valid.
+To start a new line within a message or story chapter, type \n where you want
+that line break. English and Hindi text are supported; save the file as UTF-8.
+
+Most main messages are in the content files. Small labels and page structure
+can also be edited in index.html, wish/index.html, and story/index.html.
+
+3. ADD YOUR POSTCARD PHOTOS WITHOUT CODING
+------------------------------------------
+First download the updated Vercel-ready ZIP from ChatGPT and keep it on your
+computer. Extract it and open index.html. Skip the cake intro to reach Home.
+
+1. Click "Change postcard photos" below the postcards.
+2. Choose a photo for the Wish postcard and/or the Story postcard. You will
+   see a preview immediately.
+3. Under "Select your website ZIP", choose the SAME updated ZIP you downloaded
+   from ChatGPT. Do not select the older ZIP from before these changes.
+4. Click "Download website with photos". Your browser downloads a new file
+   called Birthday_Website_With_Photos.zip.
+5. Upload that new ZIP to Vercel so everyone sees the photos.
+
+Selecting a photo previews it only on your device. It is not uploaded to the
+internet automatically. Use the downloaded ZIP when publishing. To edit photos
+again later, use the most recent website ZIP that contains your changes.
+
+You can also replace these JPG files directly in the extracted website folder:
+
+  home/assets/home-background.jpg    Home page background
+  home/assets/wish-card.jpg         Wish postcard on the home page
+  home/assets/story-card.jpg        Story postcard on the home page
+  wish/assets/wish-photo.jpg        Photo beside the birthday letter
+  story/assets/story-background.jpg Story page background
+  home/assets/intro-poster.jpg      Still picture before the cake video
+
+If you replace files by hand, use actual JPG images with these exact names.
+Photos will be cropped to fit their frames. For backgrounds, landscape works
+best. On Windows, enable View > Show > File name extensions before renaming.
+Do not rename a PNG or HEIC file to .jpg: convert or save it as JPG first.
+
+4. ADD OR CHANGE VIDEOS
+-----------------------
+STORY VIDEO: Save your MP4 video as exactly our-story.mp4 inside:
+
+  story/assets/our-story.mp4
+
+Refresh the Story page. The video will appear automatically. To make it visible
+to everyone online, upload this MP4 together with the rest of the site.
+The "Choose a video to preview" button only previews on the current device;
+it does not upload or save a video to your hosted website.
+
+CAKE INTRO VIDEO: The current opening video is:
+
+  home/assets/intro.mp4
+
+You can replace it with another MP4 using the same filename. For the existing
+cake-slicing interaction to line up, use a 16:9 video with the cake near the
+centre, and replace home/assets/intro-poster.jpg with a matching still image.
+The video starts at 1 second after the visitor slices. To change that time,
+open home/home-content.js and change cutStartSeconds: 1 to the desired second.
+A different cake position or video shape may require changes to home/home.js.
+
+5. HOST THE WEBSITE
+--------------------
+This is a static HTML, CSS, and JavaScript website. It needs no database,
+backend, package installation, or build command.
+
+Upload the CONTENTS of the extracted Birthday_Website folder to the root of
+your static hosting service. The root must contain index.html and the home,
+wish, story, and shared folders together. Some hosts let you upload a ZIP;
+others require you to upload the extracted files or connect a repository.
+
+After you change text, photos, or videos, upload the changed files again (or
+push them to your connected repository) so visitors see the changes. This
+package does not include an online admin dashboard or automatic cloud storage.
+If a browser shows an older version, refresh with Ctrl+F5.
+
+6. FILES AND FOLDERS
+---------------------
+  index.html                 Home page; keep this in the top-level folder
+  home/home-content.js       Home text and video start-time setting
+  home/home.css              Home page styling
+  home/home.js               Cake interaction
+  home/photo-editor.js       Home postcard photo preview and ZIP export
+  home/assets/               Home images and cake video
+  wish/index.html            Wish page
+  wish/wish-content.js       Wish page text
+  wish/wish.css              Wish page styling
+  wish/wish.js               Wish interactions
+  wish/assets/               Wish photo
+  story/index.html           Story page
+  story/story-content.js     Story page text
+  story/story.css            Story page styling
+  story/story.js             Story video preview
+  story/assets/              Story background and your story video
+  shared/                    Effects used across the pages
+
+If anything looks wrong after editing a text file, check the quotation marks and
+commas first. The original files still contain sample text inside their HTML.

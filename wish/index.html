@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8efe5">
+  <meta name="description" content="A thoughtful birthday wish for a wonderful day.">
+  <title>The Wish — A Little Birthday World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wish.css">
+  <link rel="stylesheet" href="../shared/experience.css">
+  <script src="wish-content.js" defer></script>
+  <script src="wish.js" defer></script>
+  <script src="../shared/experience.js" defer></script>
+</head>
+<body class="page-wish">
+  <header class="topbar wrap">
+    <a class="brand" href="../index.html" aria-label="A Little Birthday World, home"><span class="brand-symbol" aria-hidden="true">✶</span><span>A little<br><strong>birthday world</strong></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="index.html" class="current" aria-current="page">Wish</a><a href="../story/index.html">Story</a></nav>
+    <a class="top-link" href="../story/index.html">Read your story <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></a>
+  </header>
+  <main>
+    <section class="intro wrap">
+      <div class="chapter">01 <span></span> A LITTLE NOTE FOR YOU</div>
+      <h1><span data-wish-text="pageTitle1">On your day,</span><br><em data-wish-text="pageTitle2">and every day.</em></h1>
+      <p data-wish-text="pageSubtitle">A birthday wish from all of us to you.</p>
+      <span class="intro-doodle" aria-hidden="true">✶</span>
+    </section>
+    <section class="letter-section wrap" aria-label="Birthday letter" data-reveal>
+      <div class="photo-side">
+        <div class="photo-card"><span class="photo-tape" aria-hidden="true"></span><div class="photo-art" role="img" aria-label="A letter and envelope with dried rose petals"></div><span class="photo-writing" data-wish-text="photoCaption">here’s to a wonderful day</span></div>
+        <span class="side-note">a little note<br>just for you <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
+      </div>
+      <article class="letter">
+        <div class="letter-top"><span>A BIRTHDAY LETTER</span><span class="letter-stamp" aria-hidden="true">✶</span></div>
+        <!-- Edit the message below to write your own birthday wish. -->
+        <h2><span data-wish-text="letterGreeting">Happy birthday!</span></h2>
+        <p data-wish-text="letterParagraph1">Today, all of us are celebrating you and the many wonderful things that make you who you are.</p>
+        <p data-wish-text="letterParagraph2">May your day be filled with laughter, thoughtful surprises, and time with the people who care about you.</p>
+        <p data-wish-text="letterParagraph3">Here’s to a year of good health, exciting opportunities, big dreams, and plenty of reasons to smile. We’re all cheering you on!</p>
+        <p class="letter-signoff"><span data-wish-text="signoff">With warm wishes,</span><br><strong data-wish-text="signature">from all of us</strong></p>
+        <button class="surprise-button" type="button" aria-expanded="false" aria-controls="surprise-note"><span class="surprise-label" data-wish-text="surpriseButton">One more little thing</span> <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></button>
+        <p id="surprise-note" class="surprise-note" data-wish-text="surpriseMessage" hidden>You make this day special simply by being you. Enjoy every moment!</p>
+      </article>
+    </section>
+    <section class="little-notes wrap" aria-labelledby="little-notes-heading" data-reveal>
+      <div class="little-notes-intro"><p class="notes-kicker">A FEW LITTLE REMINDERS</p><h2 id="little-notes-heading"><span data-wish-text="notesTitle1">For the moments</span><br><em data-wish-text="notesTitle2">in between.</em></h2><p data-wish-text="notesSubtitle">Three little notes to open whenever you need them.</p></div>
+      <div class="note-stack">
+        <details class="love-note"><summary><span class="note-label">OPEN WHEN</span><span class="note-name" data-wish-text="note1Title">you need a smile</span><span class="note-plus" aria-hidden="true">+</span></summary><p data-wish-text="note1Message">I hope you find a hundred little reasons to smile today. You deserve every one.</p></details>
+        <details class="love-note"><summary><span class="note-label">OPEN WHEN</span><span class="note-name" data-wish-text="note2Title">you doubt yourself</span><span class="note-plus" aria-hidden="true">+</span></summary><p data-wish-text="note2Message">Take a breath. You are capable of more than you know, and I believe in you.</p></details>
+        <details class="love-note"><summary><span class="note-label">OPEN WHEN</span><span class="note-name" data-wish-text="note3Title">you need a reminder</span><span class="note-plus" aria-hidden="true">+</span></summary><p data-wish-text="note3Message">You matter to the people around you, exactly as you are.</p></details>
+      </div>
+    </section>
+    <section class="next-page wrap" data-reveal><div><span>THERE'S MORE TO THIS LITTLE WORLD</span><h2>Now, for <em>your story.</em></h2></div><a href="../story/index.html">Turn the page <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></a></section>
+  </main>
+  <footer class="footer wrap"><span>A DAY WORTH CELEBRATING</span><a href="../index.html">BACK TO THE BEGINNING ↑</a></footer>
+</body>
+</html>

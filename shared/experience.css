@@ -1,0 +1,88 @@
+/* Shared finishing touches; each page keeps its own HTML, CSS, and JavaScript. */
+:root{--motion-ease:cubic-bezier(.22,.78,.24,1)}
+html{scroll-behavior:smooth}body{transition:opacity .26s var(--motion-ease),transform .26s var(--motion-ease)}
+html.page-is-leaving body{opacity:0;transform:translateY(8px)}
+::selection{background:#e7b3a8;color:#30202f}
+.main-nav a{min-height:44px;display:inline-flex;align-items:center}
+.main-nav a:after{transition:transform .25s var(--motion-ease);transform-origin:left}
+.main-nav a:not(.current):after{content:"";position:absolute;left:0;right:0;bottom:5px;height:1px;background:currentColor;transform:scaleX(0)}
+.main-nav a:not(.current):hover:after,.main-nav a:not(.current):focus-visible:after{transform:scaleX(1)}
+.reveal-await{opacity:0;transform:translateY(24px)}
+.reveal-in{opacity:1;transform:translateY(0);transition:opacity .7s var(--motion-ease),transform .7s var(--motion-ease)}
+.page-wish main,.page-story main{animation:page-arrive .65s var(--motion-ease) both}
+@keyframes page-arrive{from{opacity:.8;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+
+/* Home: two distinct invitations and tactile postcards. */
+.page-home .hero-actions{display:flex;align-items:center;gap:25px;flex-wrap:wrap}
+.page-home .story-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:#fff1e4;font-size:13px;font-weight:600;border-bottom:1px solid #f3c0ac;transition:gap .2s,color .2s}
+.page-home .story-link:hover{gap:16px;color:white}
+.page-home .replay-intro{display:inline-flex;align-items:center;gap:9px;min-height:44px;margin-top:22px;padding:0;border:0;background:none;color:#f5cfbd;cursor:pointer;font:400 15px var(--hand);text-align:left;transition:color .2s}
+.page-home .replay-intro:hover{color:#fff8ef}.page-home .replay-intro:focus-visible{outline:2px solid #ffd1ae;outline-offset:4px}
+.replay-icon{font:22px/1 Georgia,serif}
+.page-home .wish-picture{background:linear-gradient(180deg,transparent 55%,#34223355),url('../home/assets/wish-card.jpg') center 49%/cover,#a9817c}
+.page-home .wish-picture:before,.page-home .wish-picture:after{display:none}
+.page-home .postcard{box-shadow:0 22px 42px #1b0d2a70,0 5px 15px #1c0b2438;transition:transform .35s var(--motion-ease),box-shadow .35s var(--motion-ease)}
+.page-home .postcard-bottom small{color:#725963}
+.page-home .postcard:active{filter:brightness(.96)}
+.page-home .site-shell.site-arrived .hero-copy{animation:opening-copy .8s var(--motion-ease) both}
+.page-home .site-shell.site-arrived .postcard-scene{animation:opening-cards 1s var(--motion-ease) .08s both}
+@keyframes opening-copy{from{opacity:.35;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes opening-cards{from{opacity:.4;transform:translateY(22px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(hover:hover){.page-home .postcard:hover,.page-home .postcard:focus-visible{z-index:3;transform:perspective(900px) translateY(-13px) rotate(0deg) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) scale(1.025);box-shadow:0 32px 50px #170a256e}}
+
+/* A short, subtle guide and celebratory response make the cake gesture legible. */
+.slice-guide{position:absolute;left:31%;top:52%;width:38%;height:auto;pointer-events:none;overflow:visible;opacity:.72;filter:drop-shadow(0 1px 4px #5c3845);animation:guide-breathe 2.2s var(--motion-ease) 3 both}
+.slice-guide path{stroke:#fff8ed;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:8 10}
+.intro-slice-stage.is-slicing .slice-guide{opacity:0;animation:none}
+@keyframes guide-breathe{0%,100%{opacity:.28;transform:translateX(-5px)}50%{opacity:.88;transform:translateX(9px)}}
+.intro-burst{position:fixed;z-index:5;width:1px;height:1px;pointer-events:none}
+.intro-burst span{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--spark-color,#ffe5ce);animation:little-burst .9s cubic-bezier(.16,.7,.25,1) both}
+@keyframes little-burst{0%{opacity:1;transform:translate(0,0) scale(.35)}70%{opacity:1}100%{opacity:0;transform:translate(var(--spark-x),var(--spark-y)) scale(1)}}
+
+/* Wish: letter imagery, warm paper, and notes that unfold on request. */
+.page-wish .photo-art{background:linear-gradient(#442a3b05,#442a3b1f),url('../wish/assets/wish-photo.jpg') center 52%/cover,#b8777a}
+.page-wish .photo-card{box-shadow:0 20px 48px #432d3030}
+.page-wish .letter{background:#fffaf5;box-shadow:0 18px 52px #5635431c}
+.page-wish .letter:before{width:3px;background:#dba39b}
+.page-wish .letter-stamp{background:#f7e4dd;transition:transform .35s var(--motion-ease),background .35s}
+.page-wish .letter:hover .letter-stamp{transform:rotate(-9deg) scale(1.05);background:#f3d4cc}
+.little-notes{max-width:1030px;display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start;margin-bottom:105px;padding-top:5px}
+.little-notes-intro .notes-kicker{margin:0 0 15px;color:#9b626b;font-size:10px;font-weight:700;letter-spacing:.14em}
+.little-notes-intro h2{margin:0;font:400 48px/.98 var(--display);letter-spacing:-.025em}
+.little-notes-intro h2 em{font-weight:400;color:#b66f74}
+.little-notes-intro>p:last-child{max-width:255px;color:#6d5963;font-size:14px;line-height:1.7}
+.note-stack{border-bottom:1px solid #d9c3bc}
+.love-note{border-top:1px solid #d9c3bc}
+.love-note summary{min-height:76px;list-style:none;display:grid;grid-template-columns:105px 1fr 30px;gap:12px;align-items:center;cursor:pointer}
+.love-note summary::-webkit-details-marker{display:none}
+.love-note summary:focus-visible{outline:2px solid #a85663;outline-offset:3px}
+.note-label{color:#8d6268;font-size:10px;letter-spacing:.11em;font-weight:700}
+.note-name{font:400 23px var(--display);color:#402737}
+.note-plus{width:30px;height:30px;border:1px solid #c99b98;border-radius:50%;display:grid;place-items:center;color:#a66069;font:22px/1 var(--sans);transition:transform .25s var(--motion-ease),background .25s}
+.love-note[open] .note-plus{transform:rotate(45deg);background:#f3d9d1}
+.love-note>p{max-width:380px;margin:0 0 25px 117px;color:#6b5660;font-size:14px;line-height:1.7;animation:note-in .3s var(--motion-ease) both}
+@keyframes note-in{from{opacity:.4;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+
+/* Story: make the chapters feel like a quiet timeline. */
+.page-story .video-frame{box-shadow:0 22px 50px #42233230}
+.page-story .memory{transition:transform .25s var(--motion-ease),border-color .25s}
+.page-story .memory:hover{transform:translateX(6px);border-color:#be8e89}
+.page-story .memory-number{display:grid;place-items:center;width:29px;height:29px;padding:0;border:1px solid #d2a9a1;border-radius:50%;font-size:9px;background:#fcf4ea;color:#91636a}
+.page-story .memory-mark{color:#ae6f75}
+.page-story .end-note{background:#eec8ba}
+@media(max-width:900px){.little-notes{gap:35px}.little-notes-intro h2{font-size:42px}}
+@media(max-width:620px){.page-home .hero-actions{gap:12px 20px}.page-home .replay-intro{margin-top:18px}.little-notes{display:block;margin-bottom:70px}.little-notes-intro{margin-bottom:27px}.little-notes-intro h2{font-size:39px}.love-note summary{grid-template-columns:85px 1fr 30px;gap:8px}.note-name{font-size:21px}.love-note>p{margin-left:93px}.slice-guide{left:26%;width:48%;top:53%}}
+@media(max-width:360px){.page-home .hero-actions{gap:4px 14px}.page-home .story-link{font-size:12px}.love-note summary{grid-template-columns:74px 1fr 28px}.note-label{font-size:9px}.note-name{font-size:19px}.love-note>p{margin-left:82px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body,.reveal-in,.main-nav a:after,.page-home .postcard,.page-story .memory{transition:none!important}.reveal-await{opacity:1;transform:none}.page-wish main,.page-story main,.page-home .site-shell.site-arrived .hero-copy,.page-home .site-shell.site-arrived .postcard-scene,.love-note>p{animation:none}.slice-guide{animation:none;opacity:.65}.intro-burst{display:none}.page-story .memory:hover{transform:none}.page-home .postcard:hover,.page-home .postcard:focus-visible{transform:none}}
+/* The heading receives programmatic focus after the intro; controls keep visible focus rings. */
+.page-home .hero h1:focus{outline:none}
+.story-discover{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:12px;color:#fff6e9;border-bottom:1px solid #f2b9a8;font-size:13px;font-weight:600;transition:gap .2s var(--motion-ease)}
+.story-discover:hover{gap:18px}#film-title{scroll-margin-top:24px}
+@media(prefers-reduced-motion:reduce){.story-discover{transition:none}}
+.note-label{font-size:11px;letter-spacing:.06em}
+@media(max-width:620px){.brand,.brand strong{font-size:10px}}
+@media(max-width:360px){.love-note summary{grid-template-columns:78px 1fr 28px}.love-note>p{margin-left:86px}}
+
+/* Hindi and other Devanagari text falls back to this font when available. */
+:root{--display:'DM Serif Display','Noto Sans Devanagari',Georgia,serif;--sans:'DM Sans','Noto Sans Devanagari',Arial,sans-serif}
+.letter p,.love-note>p{white-space:pre-line}

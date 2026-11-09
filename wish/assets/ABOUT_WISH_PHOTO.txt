@@ -1,0 +1,2 @@
+Replace wish-photo.jpg with your own actual JPG photo of the same filename.
+It appears beside the birthday letter. See START_HERE.txt for more instructions.

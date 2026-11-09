@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2c1a2b">
+  <meta name="description" content="A little place for your favourite memories.">
+  <title>Your Story — A Little Birthday World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="story.css">
+  <link rel="stylesheet" href="../shared/experience.css">
+  <script src="story-content.js" defer></script>
+  <script src="story.js" defer></script>
+  <script src="../shared/experience.js" defer></script>
+</head>
+<body class="page-story">
+  <div class="story-top">
+    <header class="topbar wrap">
+      <a class="brand" href="../index.html" aria-label="A Little Birthday World, home"><span class="brand-symbol" aria-hidden="true">✶</span><span>A little<br><strong>birthday world</strong></span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../wish/index.html">Wish</a><a href="index.html" class="current" aria-current="page">Story</a></nav>
+      <a class="top-link" href="../wish/index.html">Back to your wish <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></a>
+    </header>
+    <section class="story-intro wrap">
+      <div class="chapter">02 <span></span> YOUR LITTLE WORLD</div>
+      <h1><span data-story-text="pageTitle1">The little things</span><br><em data-story-text="pageTitle2">become the big things.</em></h1>
+      <p><span data-story-text="pageIntro1">A little place to keep the moments, memories,</span><br class="desktop-break"> <span data-story-text="pageIntro2">and magic that make this story yours.</span></p>
+      <a class="story-discover" href="#film-title"><span data-story-text="exploreButton">Explore the story</span> <span aria-hidden="true">↓</span></a>
+      <span class="intro-note" aria-hidden="true">your favourite<br>kind of story</span>
+    </section>
+  </div>
+  <main>
+    <section class="film-section wrap" aria-labelledby="film-title" data-reveal>
+      <div class="section-heading"><div><span class="section-label">PRESS PLAY ON A MEMORY</span><h2 id="film-title"><span data-story-text="filmTitle1">A little film,</span> <em data-story-text="filmTitle2">just for you.</em></h2></div><span class="film-scribble" aria-hidden="true">made for<br>this moment <svg class="arrow-icon arrow-down" aria-hidden="true" viewBox="0 0 16 16"><path d="M13 3 3 13M3 5v8h8"/></svg></span></div>
+      <div class="video-frame">
+        <video id="memory-video" controls playsinline preload="metadata" hidden aria-label="Your story video">
+          <source src="assets/our-story.mp4" type="video/mp4">
+          Sorry, your browser does not support embedded video.
+        </video>
+        <div id="video-placeholder" class="video-placeholder">
+          <div class="play-symbol" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 2 13 8 4 14Z" fill="currentColor"/></svg></div>
+          <p class="video-title" data-story-text="videoTitle">A place for your story</p>
+          <p class="video-subtitle" data-story-text="videoSubtitle">Your favourite moments belong here.</p>
+          <label class="preview-button" for="video-file"><span data-story-text="videoChoose">Choose a video to preview</span> <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></label>
+        </div>
+      </div>
+      <div class="video-bottom"><span id="video-status" aria-live="polite" data-story-text="videoEmptyStatus">No video added yet. A preview stays on this device.</span><label class="change-video" for="video-file">Choose a video <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></label></div>
+      <input class="file-input" id="video-file" type="file" accept="video/*" aria-describedby="video-status">
+      <noscript><p>JavaScript is needed to preview a selected video.</p></noscript>
+    </section>
+    <section class="memories wrap" aria-labelledby="memories-title" data-reveal>
+      <div class="memories-intro"><span class="section-label">THE STORY SO FAR</span><h2 id="memories-title"><span data-story-text="chaptersTitle1">All the little</span><br><em data-story-text="chaptersTitle2">chapters.</em></h2><p data-story-text="chaptersSubtitle">The best stories are made of moments, not pages.</p></div>
+      <div class="memory-list">
+        <!-- Edit these three chapters to add your own memories. -->
+        <article class="memory"><span class="memory-number">01</span><div><h3 data-story-text="chapter1Title">The beginning</h3><p data-story-text="chapter1Text">Every story starts somewhere. Yours is one worth celebrating.</p></div><span class="memory-mark" aria-hidden="true">✶</span></article>
+        <article class="memory"><span class="memory-number">02</span><div><h3 data-story-text="chapter2Title">The little moments</h3><p data-story-text="chapter2Text">All the laughs, conversations, and everyday moments that somehow mean everything.</p></div><span class="memory-mark" aria-hidden="true">✶</span></article>
+        <article class="memory"><span class="memory-number">03</span><div><h3 data-story-text="chapter3Title">The pages ahead</h3><p data-story-text="chapter3Text">Here’s to more adventures, more memories, and many more moments to celebrate.</p></div><span class="memory-mark" aria-hidden="true">✦</span></article>
+      </div>
+    </section>
+    <section class="end-note" data-reveal><span>AND THE STORY GOES ON</span><p><span data-story-text="endingLine1">A favourite place for all of us</span><br>is <em data-story-text="endingLine2">right here with you.</em></p><a href="../wish/index.html">Read your wish again <span aria-hidden="true"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></span></a></section>
+  </main>
+  <footer class="footer wrap"><a href="../index.html">BACK TO THE BEGINNING ↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Put your MP4 story video in this folder and name it exactly:
+
+our-story.mp4
+
+Refresh story/index.html to see it. Upload the MP4 with the website when hosting.
+The on-page picker is only a temporary preview on the current device.
