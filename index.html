@@ -20,8 +20,6 @@
   <link rel="stylesheet" href="shared/experience.css">
   <script src="home/home-content.js" defer></script>
   <script src="home/home.js" defer></script>
-  <script src="home/vendor/jszip.min.js" defer></script>
-  <script src="home/photo-editor.js" defer></script>
   <script src="shared/experience.js" defer></script>
 </head>
 <body class="page-home">
@@ -77,42 +75,8 @@
         <span class="handwritten scene-footer">two little things,<br>one big feeling</span>
       </div>
     </main>
-    <div class="postcard-tools wrap">
-      <button type="button" class="edit-postcards" id="edit-postcards" aria-haspopup="dialog">Change postcard photos <span aria-hidden="true">↗</span></button>
-    </div>
     <footer class="site-footer wrap"><span>AN ENTIRE DAY FOR YOU</span><span class="footer-center" aria-hidden="true">✶ &nbsp; ✦ &nbsp; ✶</span><span>WISHES, MEMORIES &amp; LOVE</span></footer>
   </div>
-<dialog class="photo-editor" id="postcard-photo-editor" aria-labelledby="photo-editor-title">
-  <div class="photo-editor-inner">
-    <div class="photo-editor-heading">
-      <div>
-        <p class="photo-editor-kicker">MAKE IT YOURS</p>
-        <h2 id="photo-editor-title">Add your photos</h2>
-        <p>Choose photos for the two postcards. They will preview on this page.</p>
-      </div>
-      <button type="button" class="photo-editor-close" id="close-photo-editor" aria-label="Close photo editor">×</button>
-    </div>
-    <div class="photo-editor-grid">
-      <div class="photo-choice">
-        <img id="wish-photo-preview" src="home/assets/wish-card.jpg" alt="Preview of the Wish postcard photo">
-        <label for="wish-photo-input">Wish postcard photo</label>
-        <input type="file" id="wish-photo-input" accept="image/*">
-      </div>
-      <div class="photo-choice">
-        <img id="story-photo-preview" src="home/assets/story-card.jpg" alt="Preview of the Story postcard photo">
-        <label for="story-photo-input">Story postcard photo</label>
-        <input type="file" id="story-photo-input" accept="image/*">
-      </div>
-    </div>
-    <div class="photo-export">
-      <h3>Make the photos visible to everyone</h3>
-      <p>Select the updated website ZIP you downloaded from ChatGPT, then download a new ZIP with your photos. Upload that new ZIP to Vercel.</p>
-      <label for="website-zip-input">Select your website ZIP</label>
-      <input type="file" id="website-zip-input" accept=".zip,application/zip,application/x-zip-compressed">
-      <button type="button" class="photo-export-button" id="download-photo-site">Download website with photos</button>
-      <p class="photo-editor-status" id="photo-editor-status" role="status" aria-live="polite">Your photos stay on this device until you upload the new ZIP.</p>
-    </div>
-  </div>
-</dialog>
+
 </body>
 </html>

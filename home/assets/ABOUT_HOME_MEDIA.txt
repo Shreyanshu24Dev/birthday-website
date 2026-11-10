@@ -6,6 +6,5 @@ home-background.jpg = Main home page background
 wish-card.jpg      = Photo in the Wish postcard on the home page
 story-card.jpg     = Photo in the Story postcard on the home page
 
-To choose both postcard photos without editing code, open the home page and
-click "Change postcard photos". Follow the steps in START_HERE.txt to make
-those photos visible to everyone after you deploy to Vercel.
+These photos are fixed for this birthday website. Visitors cannot replace
+or upload their own postcard photos from the page.

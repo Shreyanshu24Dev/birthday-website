@@ -13,11 +13,7 @@ window.STORY_TEXT = {
   filmTitle2: "just for you.",
   videoTitle: "A place for your story",
   videoSubtitle: "Your favourite moments belong here.",
-  videoChoose: "Choose a video to preview",
-  videoEmptyStatus: "No video added yet. A preview stays on this device.",
-  videoPreviewReady: "Your video is ready to play. This preview stays on this device.",
   videoReady: "A little film, just for you.",
-  videoError: "This video could not be played. Try an MP4 or WebM file.",
 
   chaptersTitle1: "All the little",
   chaptersTitle2: "chapters.",

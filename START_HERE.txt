@@ -35,37 +35,12 @@ that line break. English and Hindi text are supported; save the file as UTF-8.
 Most main messages are in the content files. Small labels and page structure
 can also be edited in index.html, wish/index.html, and story/index.html.
 
-3. ADD YOUR POSTCARD PHOTOS WITHOUT CODING
-------------------------------------------
-First download the updated Vercel-ready ZIP from ChatGPT and keep it on your
-computer. Extract it and open index.html. Skip the cake intro to reach Home.
+3. PHOTOS ARE FIXED FOR THIS BIRTHDAY WEBSITE
+------------------------------------------------
 
-1. Click "Change postcard photos" below the postcards.
-2. Choose a photo for the Wish postcard and/or the Story postcard. You will
-   see a preview immediately.
-3. Under "Select your website ZIP", choose the SAME updated ZIP you downloaded
-   from ChatGPT. Do not select the older ZIP from before these changes.
-4. Click "Download website with photos". Your browser downloads a new file
-   called Birthday_Website_With_Photos.zip.
-5. Upload that new ZIP to Vercel so everyone sees the photos.
-
-Selecting a photo previews it only on your device. It is not uploaded to the
-internet automatically. Use the downloaded ZIP when publishing. To edit photos
-again later, use the most recent website ZIP that contains your changes.
-
-You can also replace these JPG files directly in the extracted website folder:
-
-  home/assets/home-background.jpg    Home page background
-  home/assets/wish-card.jpg         Wish postcard on the home page
-  home/assets/story-card.jpg        Story postcard on the home page
-  wish/assets/wish-photo.jpg        Photo beside the birthday letter
-  story/assets/story-background.jpg Story page background
-  home/assets/intro-poster.jpg      Still picture before the cake video
-
-If you replace files by hand, use actual JPG images with these exact names.
-Photos will be cropped to fit their frames. For backgrounds, landscape works
-best. On Windows, enable View > Show > File name extensions before renaming.
-Do not rename a PNG or HEIC file to .jpg: convert or save it as JPG first.
+The home-page postcards and Wish/Story photos are part of the website files.
+Visitors cannot replace them from the website. To change a photo, replace the
+matching image in the assets folder and redeploy the site.
 
 4. ADD OR CHANGE VIDEOS
 -----------------------
@@ -75,8 +50,8 @@ STORY VIDEO: Save your MP4 video as exactly our-story.mp4 inside:
 
 Refresh the Story page. The video will appear automatically. To make it visible
 to everyone online, upload this MP4 together with the rest of the site.
-The "Choose a video to preview" button only previews on the current device;
-it does not upload or save a video to your hosted website.
+There is no visitor video picker. The Story page uses only the video you add
+to the website files, so every visitor sees the same birthday film.
 
 CAKE INTRO VIDEO: The current opening video is:
 
@@ -110,7 +85,6 @@ If a browser shows an older version, refresh with Ctrl+F5.
   home/home-content.js       Home text and video start-time setting
   home/home.css              Home page styling
   home/home.js               Cake interaction
-  home/photo-editor.js       Home postcard photo preview and ZIP export
   home/assets/               Home images and cake video
   wish/index.html            Wish page
   wish/wish-content.js       Wish page text
@@ -120,7 +94,7 @@ If a browser shows an older version, refresh with Ctrl+F5.
   story/index.html           Story page
   story/story-content.js     Story page text
   story/story.css            Story page styling
-  story/story.js             Story video preview
+  story/story.js             Shows the fixed Story video when it is deployed
   story/assets/              Story background and your story video
   shared/                    Effects used across the pages
 
